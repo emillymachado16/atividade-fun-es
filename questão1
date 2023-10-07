@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+int contaDigitos(int n, int d){
+    int cont = 0, formula;
+    for(int i = 0; i < n; i++){
+        formula = n%10;
+        if(formula == d){
+            cont++;
+        }
+    }
+    return cont;
+}
+
+int permutacao(int na, int nb, int n){
+    if(contaDigitos(na, n) == contaDigitos(nb, n)){
+        return 1;
+    }else{
+        return 0;
+    }
+}
+
+int main(){
+    int n1, n2, ndec;
+    printf("Informe uma numero: ");
+    scanf("%d", &n1);
+    
+    printf("Informe outro numero: ");
+    scanf("%d", &n2);
+    
+    printf("Qual numero deseja verificar: ");
+    scanf("%d", &ndec);
+    
+    if(permutacao(n1, n2, ndec) == 1)
+    printf("permutacao de a em b");
+    else
+    printf("Nao ha permutacao de a em b");
+    
+}
